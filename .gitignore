@@ -1,0 +1,7 @@
+.vscode
+.idea
+.venv
+*.session
+*.session*
+
+__pycache__/
