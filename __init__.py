@@ -22,8 +22,8 @@ class TgUserBot(Client):
     def log(self, *args, **kwargs):
         frame = inspect.stack()[1]
         func_name = frame.function
-        funcobj = frame.frame.f_globals[func_name]
-        if hasattr(funcobj, "LOG_NAME"):
+        funcobj = frame.frame.f_globals.get(func_name)
+        if funcobj and hasattr(funcobj, "LOG_NAME"):
             logname = frame.frame.f_globals[func_name].LOG_NAME
             logging.getLogger(logname).info(*args, **kwargs)
         else:
