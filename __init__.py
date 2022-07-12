@@ -171,6 +171,6 @@ def StartBot():
     UserBot.log("=============================")
 
     try:
-        UserBot.run()
+        UserBot.start()
     except KeyboardInterrupt:
         UserBot.stop()
